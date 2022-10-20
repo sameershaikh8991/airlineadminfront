@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>All Flight</title>
+  </head>
+  <body>
+
+    <div>
+      <h2>All Flight list</h2>
+    </div>
+    <p><a href="add">add Flight</a></p>
+    <div class="container table-responsive py-5"> 
+      <table class="table table-bordered table-hover ">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Flight no</th>
+            <th scope="col">source</th>
+            <th scope="col">destinatin</th>
+            <th scope="col">departure Time</th>
+            <th scope="col">arrival Time</th>
+            <th scope="col">flight duration (Hr)</th>
+            <th scope="col">ecomony Seat</th>
+            <th scope="col">business Seat</th>
+            <th scope="col">ecomony Price</th>
+            <th scope="col">business Price</th>
+            <th scope="col">capacity Seat</th>
+            <th scope="col">update</th>
+            <th>delete</th>
+  
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let f of flight">
+            <td>{{f.flightNo}}</td>
+            <td>{{f.source}}</td>
+            <td>{{f.destinatin}}</td>
+            <td>{{f.departure_time}}</td>
+            <td>{{f.arrival_time}}</td>
+            <td>{{f.flight_duration}}</td>
+            <td>{{f.ecomonySeat}}</td>
+            <td>{{f.businessSeat}}</td>
+            <td>{{f.ecomonyPrice}}</td>
+            <td>{{f.businessPrice}}</td>
+            <td>{{f.availableSeat}}</td>
+            <td><button class="btn btn-primary"><a [routerLink]="['/update/',f.flightNo]"></a>update</button></td>
+      <td><button class="btn btn-primary" (click)="deleteFlight(f.flightNo)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
